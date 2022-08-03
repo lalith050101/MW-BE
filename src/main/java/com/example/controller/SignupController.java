@@ -11,8 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.model.UserModel;
 import com.example.repository.UserModelRepository;
 
-//@CrossOrigin(origins = "http://localhost:8081")
-@CrossOrigin(origins = {"https://medworld.daranip.com","https://medworld.netlify.app"})
+
 @RestController
 public class SignupController {
 

@@ -16,9 +16,6 @@ import com.example.exception.ResourceNotFoundException;
 import com.example.model.ProductModel;
 import com.example.repository.ProductRepository;
 
-//@CrossOrigin(origins = "http://localhost:8081")
-@CrossOrigin(origins = {"https://medworld.daranip.com","https://medworld.netlify.app"})
-//@CrossOrigin(origins = "https://8081-dbdedffdadadeeffdaabdfaccfeebafecbf.examlyiopb.examly.io")
 @RestController
 public class ProductController {
 

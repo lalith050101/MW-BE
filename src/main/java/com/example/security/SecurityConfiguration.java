@@ -55,19 +55,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
         .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     	
 
-//    			http.csrf().disable()
-//                .authorizeRequests().antMatchers("/login").permitAll().antMatchers("/signup").permitAll().
-//                anyRequest().authenticated().and().
-//                exceptionHandling().and().sessionManagement()
-//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
-
-//    			http.csrf().disable()
-//                .authorizeRequests().antMatchers("/login").permitAll().antMatchers("/signup").permitAll().
-//                anyRequest().authenticated().and().
-//                exceptionHandling().and().sessionManagement()
-//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
     	http.cors();
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
@@ -79,7 +66,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     public CorsConfigurationSource corsConfigurationSource() {
     	System.out.println("inside corsconfigurationsource bean************************");
     	CorsConfiguration c = new CorsConfiguration();
-    	c.setAllowedOrigins(Arrays.asList("https://medworld.daranip.com","https://medworld.netlify.app"));
+    	c.setAllowedOrigins(Arrays.asList("*"));
     	c.setAllowedMethods(Arrays.asList("*"));
     	c.setAllowedHeaders(Arrays.asList("*"));
     	c.setAllowCredentials(false);
@@ -90,12 +77,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     }
     
 
-//    @Bean
-//    public PasswordEncoder passwordEncoder() {
-//        //return  NoOpPasswordEncoder.getInstance();
-//    	return new BCryptPasswordEncoder();
-//    }
-//    
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         //return  NoOpPasswordEncoder.getInstance();
